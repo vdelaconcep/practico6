@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliación</title>
+
+    <style>
+
+        .botonera-superior {
+            margin: 0px;
+            padding: 1%;
+            box-sizing: border-box;
+            background-color: dimgray;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .botonera-superior button {
+            height: 30px;
+            width: 40px;
+            margin: 2px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .botonera-superior button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .botonera-superior select {
+            height: 30px;
+            margin-left: 2px;
+        }
+
+        .estilo-radio {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+        }
+
+        .input-radio {
+            margin-left: 2%;
+        }
+
+        @media (max-width:650px) {
+            .estilo-radio {
+                margin-top: 3%;
+                width: 100%;
+            }
+        }
+
+        .hundido {
+            background-color: dimgray;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+
+    <link id="estilo" rel="stylesheet" href="./css/estilos.css">
+
+</head>
+<body>
+    <header>
+        <div class="botonera-superior">
+            <span>Estilos: </span>
+            <button id="siguiente-estilo" title="Siguiente estilo">
+                <i class="fa-solid fa-forward"></i>
+            </button>
+            <button id="estilo-random" title="Estilo aleatorio">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button id="fijar-estilo" title="Fijar estilo">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+            <select title="Elegir" name="select-estilo" id="select-estilo">
+                <option value="" disabled>-Seleccionar-</option>
+                <option value="0" id="sel-0">Predeterminado</option>
+                <option value="1" id="sel-1">Retro</option>
+                <option value="2" id="sel-2">Futuro</option>
+                <option value="3" id="sel-3">Sin estilo</option>
+            </select>
+            <label class="estilo-radio">
+                <div class="input-radio">
+                    <label for="radio-0"><input type="radio" id="radio-0" name="estilo-radio" value="0">Predeterminado</label>
+                </div>
+                <div class="input-radio">
+                    <label for="radio-1"><input type="radio" id="radio-1" name="estilo-radio" value="1">Retro</label>
+                </div>
+                <div class="input-radio">
+                    <label for="radio-2"><input type="radio" id="radio-2" name="estilo-radio" value="2">Futuro</label>
+                </div>
+                <div class="input-radio">
+                    <label for="radio-3"><input type="radio" id="radio-3" name="estilo-radio" value="3">Sin estilo</label>
+                </div>
+            </label>
+        </div>
+        <div class="encabezado">
+            <div class="cont-titulo">
+                <h1 class="titulo">Vení al Gym! <span class="emoji">💪🏽</span></h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form class="formulario">
+            <div class="fieldsets">
+                <div class="cont-datos-personales">
+                    <fieldset class="datos-personales">
+                        <legend><span class="emoji">🙋🏼‍♂️</span> <span class="legend-texto"> Datos <span class="legend-texto">Personales</span> </span> <span class="emoji">👀</span></legend>
+                        <div class="inputs-datos-personales">
+                            <label for="nombre">Nombre:*</label>
+                            <input type="text" id="nombre" name="nombre" maxlength="20" required autofocus><br>
+                            <label for="apellido">Apellido:*</label>
+                            <input type="text" id="apellido" name="apellido" maxlength="30" required><br>
+                            <label for="documento">Documento:*</label>
+                            <input type="number" id="documento" name="Documento" max="99999999" min="1000000" required><br>
+                            <label for="nacionalidad">Nacionalidad:*</label>
+                            <select name="nacionalidad" id="nacionalidad" required>
+                            <option value disabled selected>- Seleccionar -</option>
+                            <option value="AR">Argentina</option>
+                            <option value="UY">Uruguaya</option>
+                            <option value="BR">Brasileña</option>
+                            <option value="VE">Venezolana</option>
+                            <option value="OT">Otra</option>
+                            </select><br>
+                            <label for="mensaje">Contanos un poco de vos... </label>
+                            <textarea name="mensaje" id="mensaje"></textarea><br>
+                            <span>Sexo:*</span><br>
+                            <div class="radios">
+                                <label for="femenino"><input type="radio" id="femenino" name="genero" value="femenino" checked> Femenino</label>
+                                <label for="masculino"><input type="radio" id="masculino" name="genero" value="masculino"> Masculino</label>
+                                <label for="otro"><input type="radio" id="otro" name="genero" value="otro"> Otro</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="contacto-y-actividades">
+                    <div class="cont-contacto">
+                        <fieldset class="contacto">
+                            <legend> <span class="emoji">📱</span> <span class="legend-texto"> Datos</span> de <span class="legend-texto">contacto </span> <span class="emoji">📧</span></legend>
+                            <div class="inputs-contacto">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" max="999999999" placeholder="Código de área y número"><br>
+                            <label for="correo">Dirección de correo electronico:*</label>
+                            <input type="email" id="correo" maxlength="40" name="correo" placeholder="Ej: mail@gmail.com" required>
+                        </fieldset>
+                    </div>
+                    <div class="cont-actividades">
+                        <fieldset class="actividades">
+                            <legend><span class="emoji">🚴</span> <span class="legend-texto"> Actividades </span> <span class="emoji">🤸🏼‍♂️</span></legend><br>
+                            <div class="inputs-actividades">
+                                <label>Por favor, indicá cuáles actividades te interesan. <br><br>
+                                Sede Palermo:<br><br>
+                                <div class="checks-actividades">
+                                    <label for="basquet-palermo"><input type="checkbox" id="basquet-palermo" value="basquet-palermo"> Básquet</label>
+                                    <label for="boxeo"><input type="checkbox" id="boxeo" value="boxeo"> Boxeo</label>
+                                    <label for="futbol-palermo"><input type="checkbox" id="futbol-palermo" value="futbol-palermo"> Fútbol</label>
+                                    <label for="tenis"><input type="checkbox" id="tenis" value="tenis"> Tenis</label>
+                                </div><br>
+                                Sede Rosario:<br><br>
+                                <div class="checks-actividades">
+                                    <label for="basquet-rosario"><input type="checkbox" id="basquet-rosario" value="basquet-rosario"> Básquet</label>
+                                    <label for="futbol-rosario"><input type="checkbox" id="futbol-rosario" value="futbol-rosario"> Fútbol</label>
+                                    <label for="rugby"><input type="checkbox" id="rugby" value="rugby"> Rugby</label>
+                                    <label for="voley"><input type="checkbox" id="voley" value="voley"> Voley</label>
+                                </div>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="parte-inferior">
+                <div class="ultimos-campos">
+                    <input type="checkbox" name="condiciones" id="condiciones" value="acepto" required><label for="condiciones">Acepto las condiciones*</label><br>
+                    <input type="checkbox" name="novedades" id="novedades" value="novedades" checked><label for="novedades">Deseo recibir novedades</label><br><br>
+                    <span class="aviso">*: Campo obligatorio</span>
+                </div><br>
+                <div class="botonera-inferior">
+                    <button id="iniciar-afiliacion" type="submit">Iniciar afiliación</button>
+                    <button id="restablecer" type="reset">Restablecer</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/12ccf94b47.js" crossorigin="anonymous"></script>
+</body>
+</html>

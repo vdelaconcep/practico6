@@ -1,0 +1,236 @@
+/* Fuentes utilizadas */
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+
+/* Reset y fondo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1F2023;
+}
+
+/* Encabezado */
+
+.titulo {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    border-top: solid 15px #4D6D63;
+    border-right: solid 15px #1F2023;
+    border-left: solid 15px #1F2023;
+    border-bottom: solid 15px #4D6D63;
+    width: 90%;
+    max-width: 700px;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 350px) {
+    .titulo {
+        font-size: 1.9em;
+    }
+}
+
+/*cajitas forms*/
+
+main {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: white;
+}
+
+fieldset {
+    background-color: #D6E2DE;
+    padding: 20px;
+    border: solid 2px #4D6D63;
+    border-radius: 5px;
+    color: #1F2023;
+    width: 100%;
+    justify-self: center;
+}
+
+fieldset:focus-within {
+    background-color: #A6C1B9;
+    transition: 0.5s;
+}
+
+.cont-actividades,
+.cont-contacto,
+.cont-datos-personales {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.cont-contacto::after,
+.cont-datos-personales::after {
+    content: " ";
+    display: block;
+    width: 40%;
+    justify-self: center;
+    margin-top: 25px;
+    border-bottom: dotted 12px #D6E2DE;
+}
+
+/*Leyendas*/
+
+legend {
+    background-color: #2B3D37;
+    color: white;
+    text-align: left;
+    padding: 0;
+    padding: 14px 12px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.legend-texto {
+    display: inline-block;
+}
+
+.legend-texto::first-letter,
+legend .emoji {
+    font-size: 130%;
+    font-weight: 800;
+}
+
+/* Inputs: posición */
+
+.inputs-contacto,
+.inputs-datos-personales {
+    padding: 5px 0;
+    width: 75%;
+    justify-self: center;
+}
+
+@media (max-width:400px) {
+
+    .inputs-contacto,
+    .inputs-datos-personales {
+        width: 240px;
+    }
+}
+
+.radios {
+    margin-top: 5px
+}
+
+.inputs-actividades {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+/* Estilos inputs */
+
+#nombre,
+#apellido,
+#documento,
+#telefono,
+#correo,
+#nacionalidad,
+#mensaje {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#mensaje {
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+#correo:focus,
+#documento:focus,
+#telefono:focus,
+#nacionalidad:focus,
+#mensaje:focus {
+    background-color: #4D6D63;
+    border: 2px solid black;
+    transition: 0.5s;
+    color: white;
+}
+
+input#nombre,
+input#apellido,
+input#documento,
+input#telefono,
+input#correo {
+    text-align: right;
+}
+
+/* Placeholders para distintos navegadores */
+
+#telefono:focus::-webkit-input-placeholder,
+#correo:focus::-webkit-input-placeholder {
+    color: #A6C1B9;
+}
+
+#telefono:focus::-moz-placeholder,
+#correo:focus::-moz-placeholder {
+    color: #A6C1B9;
+}
+
+#telefono:focus::-ms-input-placeholder,
+#correo:focus::-ms-input-placeholder {
+    color: #A6C1B9;
+}
+
+/*Parte inferior y botones*/
+
+.parte-inferior {
+    margin-top: 25px;
+}
+
+.botonera-inferior {
+    text-align: center;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+#iniciar-afiliacion,
+#restablecer {
+    background-color: #2B3D37;
+    padding: 10px 10px;
+    border: solid 1px #A6C1B9;
+    border-radius: 5px;
+    color: #A6C1B9;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#iniciar-afiliacion:hover,
+#restablecer:hover {
+    background-color: #A6C1B9;
+    color: black;
+    border-color: black;
+}
