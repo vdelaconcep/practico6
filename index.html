@@ -113,14 +113,14 @@
                         <legend><span class="emoji">🙋🏼‍♂️</span> <span class="legend-texto"> Datos <span class="legend-texto">Personales</span> </span> <span class="emoji">👀</span></legend>
                         <div class="inputs-datos-personales">
                             <label for="nombre">Nombre:*</label>
-                            <input type="text" id="nombre" name="nombre" maxlength="20" required autofocus><br>
+                            <input type="text" id="nombre" name="nombre" maxlength="20" autofocus required><br>
                             <label for="apellido">Apellido:*</label>
                             <input type="text" id="apellido" name="apellido" maxlength="30" required><br>
                             <label for="documento">Documento:*</label>
-                            <input type="number" id="documento" name="Documento" max="99999999" min="1000000" required><br>
+                            <input type="number" id="documento" name="Documento" min="1000000" max="999999999" required><br>
                             <label for="nacionalidad">Nacionalidad:*</label>
                             <select name="nacionalidad" id="nacionalidad" required>
-                            <option value disabled selected>- Seleccionar -</option>
+                            <option value="" disabled selected>- Seleccionar -</option>
                             <option value="AR">Argentina</option>
                             <option value="UY">Uruguaya</option>
                             <option value="BR">Brasileña</option>
@@ -128,7 +128,7 @@
                             <option value="OT">Otra</option>
                             </select><br>
                             <label for="mensaje">Contanos un poco de vos... </label>
-                            <textarea name="mensaje" id="mensaje"></textarea><br>
+                            <textarea name="mensaje" id="mensaje" maxlength="140"></textarea><br>
                             <span>Sexo:*</span><br>
                             <div class="radios">
                                 <label for="femenino"><input type="radio" id="femenino" name="genero" value="femenino" checked> Femenino</label>
@@ -144,7 +144,7 @@
                             <legend> <span class="emoji">📱</span> <span class="legend-texto"> Datos</span> de <span class="legend-texto">contacto </span> <span class="emoji">📧</span></legend>
                             <div class="inputs-contacto">
                             <label for="telefono">Teléfono:</label>
-                            <input type="tel" id="telefono" name="telefono" max="999999999" placeholder="Código de área y número"><br>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Código de área y número" min="1000000000" max="9999999999"><br>
                             <label for="correo">Dirección de correo electronico:*</label>
                             <input type="email" id="correo" maxlength="40" name="correo" placeholder="Ej: mail@gmail.com" required>
                         </fieldset>
@@ -156,17 +156,17 @@
                                 <label>Por favor, indicá cuáles actividades te interesan. <br><br>
                                 Sede Palermo:<br><br>
                                 <div class="checks-actividades">
-                                    <label for="basquet-palermo"><input type="checkbox" id="basquet-palermo" value="basquet-palermo"> Básquet</label>
-                                    <label for="boxeo"><input type="checkbox" id="boxeo" value="boxeo"> Boxeo</label>
-                                    <label for="futbol-palermo"><input type="checkbox" id="futbol-palermo" value="futbol-palermo"> Fútbol</label>
-                                    <label for="tenis"><input type="checkbox" id="tenis" value="tenis"> Tenis</label>
+                                    <label for="basquet-palermo"><input type="checkbox" name="actividades" id="basquet-palermo" value="basquet-palermo"> Básquet</label>
+                                    <label for="boxeo"><input type="checkbox" name="actividades" id="boxeo" value="boxeo"> Boxeo</label>
+                                    <label for="futbol-palermo"><input type="checkbox" name="actividades" id="futbol-palermo" value="futbol-palermo"> Fútbol</label>
+                                    <label for="tenis"><input type="checkbox" name="actividades" id="tenis" value="tenis"> Tenis</label>
                                 </div><br>
                                 Sede Rosario:<br><br>
                                 <div class="checks-actividades">
-                                    <label for="basquet-rosario"><input type="checkbox" id="basquet-rosario" value="basquet-rosario"> Básquet</label>
-                                    <label for="futbol-rosario"><input type="checkbox" id="futbol-rosario" value="futbol-rosario"> Fútbol</label>
-                                    <label for="rugby"><input type="checkbox" id="rugby" value="rugby"> Rugby</label>
-                                    <label for="voley"><input type="checkbox" id="voley" value="voley"> Voley</label>
+                                    <label for="basquet-rosario"><input type="checkbox" name="actividades" id="basquet-rosario" value="basquet-rosario"> Básquet</label>
+                                    <label for="futbol-rosario"><input type="checkbox" name="actividades" id="futbol-rosario" value="futbol-rosario"> Fútbol</label>
+                                    <label for="rugby"><input type="checkbox" name="actividades" id="rugby" value="rugby"> Rugby</label>
+                                    <label for="voley"><input type="checkbox" name="actividades" id="voley" value="voley"> Voley</label>
                                 </div>
                                 </label>
                             </div>
@@ -181,14 +181,16 @@
                     <span class="aviso">*: Campo obligatorio</span>
                 </div><br>
                 <div class="botonera-inferior">
-                    <button id="iniciar-afiliacion" type="submit">Iniciar afiliación</button>
+                    <button id="iniciar-afiliacion">Iniciar afiliación</button>
                     <button id="restablecer" type="reset">Restablecer</button>
                 </div>
             </div>
         </form>
     </main>
 
+    <script src="./js/validaciones.js"></script>
     <script src="./js/index.js"></script>
+    
     <script src="https://kit.fontawesome.com/12ccf94b47.js" crossorigin="anonymous"></script>
 </body>
 </html>
